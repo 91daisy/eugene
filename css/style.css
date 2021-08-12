@@ -1,0 +1,838 @@
+@charset "utf-8";
+
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@100;300;400;500;700;900&display=swap');
+
+body {
+	font-family: 'Noto Sans KR';
+	background-color: #aaa;
+}
+
+/* 본문 */
+#wrap {
+	position: relative;
+	width: 1000px;
+	margin: 100px auto;
+}
+
+/* 배경이미지 */
+#bg-img > .bg-frame {
+	position: fixed;
+	left: 0;
+	top: 0;
+	display: block;
+	width: 34.3%;
+	height: 100%;
+	background-size: cover;
+	background-position: left center;
+	background-repeat: no-repeat;
+	background-image: url(./../images/body_bg2.jpg);
+	background-attachment: scroll;
+	z-index: -2;
+}
+
+/* header 영역 */
+
+header {
+	position: absolute;
+	left: 0;
+	top: 0;
+	width: 300px;
+	height: auto;
+	background-color: #fff;
+}
+
+/* 로고 */
+header > .logo {
+	display: block;
+	width: 252px;
+	margin: 0 auto;
+	background-position: center center;
+	background-repeat: no-repeat;
+	background-image: url(./../images/logo.png);
+}
+header > .logo > a {
+	display: block;
+	height: 100px;
+	line-height: 100px;
+	text-indent: -9999px;
+}
+
+/* 햄버거버튼 */
+header > a.btn-gnb {
+	display: none;
+}
+
+/* 네비게이션 */
+header > .left-menu > nav {
+	position: relative;
+	padding: 10px 0;
+	text-indent: 10px;
+	font-size: 15px;
+}
+
+header > .left-menu > nav > .gnb > li {
+	display: block;
+	border-bottom: 1px solid #e0e0e0;
+	box-sizing: border-box;
+}
+header > .left-menu > nav > .gnb > li:first-child {
+	border-top: 1px solid #e0e0e0;
+}
+header > .left-menu > nav > .gnb > li > a {
+	display: block;
+	height: 30px;
+	line-height: 30px;
+	color: #333;
+	background-color: rgba(255, 255, 255, 0.95);
+}
+
+header > .left-menu > nav > .gnb > li:hover > a,
+header > .left-menu > nav > .gnb > li.on > a {
+	display: block;
+	color: #fff;
+	background-color: #1a75c0;
+}
+header > .left-menu > nav > .gnb > li > .lnb {
+	display: none;
+	position: absolute;
+	left: 300px;
+	top: 30px;
+	width: 300px;
+	height: auto;
+	padding: 10px 0;
+	text-indent: 10px;
+	color: #333;
+	background-color: rgba(255, 255, 255, 0.95);
+}
+header > .left-menu > nav > .gnb > li > .lnb > li {
+	display: block;
+	border-bottom: 1px solid #e0e0e0;
+}
+header > .left-menu > nav > .gnb > li > .lnb > li > a {
+	display: block;
+	height: 30px;
+	line-height: 30px;
+}
+
+header > .left-menu > nav > .gnb > li > .lnb > li:hover > a,
+header > .left-menu > nav > .gnb > li > .lnb > li.on > a {
+	display: block;
+	color: #fff;
+	background-color: #1a75c0;
+}
+
+/* 서치 & 언어 */
+header > .left-menu > .widgets {
+	position: relative;
+	display: block;
+	width: 300px;
+}
+header > .left-menu > .widgets > .widget-tool {
+	display: flex;
+	align-items: center;
+}
+header > .left-menu > .widgets > .widget-tool > li {
+	display: block;
+}
+header > .left-menu > .widgets > .widget-tool > li > a {
+	display: block;
+	height: 30px;
+	line-height: 30px;
+	background-size: contain;
+	background-repeat: no-repeat;
+	border-bottom: 1px solid #e0e0e0;
+	box-sizing: border-box;
+}
+header > .left-menu > .widgets > .widget-tool > li:first-child > a {
+	border-right: 1px solid #e0e0e0;
+}
+
+/* search */
+header > .left-menu > .widgets > .widget-tool > li > .main-search {
+	display: block;
+	width: 50px;
+	height: 100%;
+	text-indent: -9999px;
+	background-position: 50% 50%;
+	background-image: url(./../images/search-icon.png);
+}
+header > .left-menu > .widgets > .widget-tool > li > .search {
+	display: none;
+	position: absolute;
+	left: 0;
+	top: 35px;
+	width: 300px;
+	border: 1px solid #e0e0e0;
+	box-sizing: border-box;
+}
+
+header > .left-menu > .widgets > .widget-tool > li.on > .search {
+	display: block;
+	background-size: contain;
+	background-repeat: no-repeat;
+	background-position: 260px center;
+	background-image: url(./../images/search-icon.png);
+}
+header > .left-menu > .widgets > .widget-tool > li > .search > li {
+	display: inline-block;
+	text-indent: 15px;
+	height: 30px;
+	line-height: 30px;
+	color: #8e8e8e;
+	font-size: 15px;
+}
+
+/* languages */
+header > .left-menu > .widgets > .widget-tool > li > .main-language {
+	display: block;
+	width: 250px;
+	height: 30px;
+	text-align: center;
+	font-size: 15px;
+	background-position: 15px 50%;
+	background-image: url(./../images/earth-icon.png);
+}
+
+header > .left-menu > .widgets > .widget-tool > li > .language {
+	display: none;
+	text-indent: 10px;
+	color: #333;
+}
+
+header > .left-menu > .widgets > .widget-tool > li.on > .language {
+	display: block;
+}
+
+header > .left-menu > .widgets > .widget-tool > li > .language > li {
+	position: absolute;
+	display: block;
+	font-size: 16px;
+}
+header > .left-menu > .widgets > .widget-tool > li > .language > li:nth-child(1) {
+	left: 0;
+	top: 35px;
+}
+header > .left-menu > .widgets > .widget-tool > li > .language > li:nth-child(2) {
+	left: 0;
+	top: 60px;
+}
+
+header > .left-menu > .widgets > .widget-tool > li > .language > li:nth-child(3) {
+	left: 50%;
+	top: 60px;
+}
+header > .left-menu > .widgets > .widget-tool > li > .language > li > a {
+	display: block;
+}
+
+header > .left-menu > .widgets > .widget-tool > li > .language > li > a > span {
+	display: inline-block;
+	width: 18px;
+	height: 12px;
+}
+header > .left-menu > .widgets > .widget-tool > li > .language > li > a > .ko-icon {
+	background-image: url(./../images/ko.png);
+}
+header > .left-menu > .widgets > .widget-tool > li > .language > li > a > .en-icon {
+	background-image: url(./../images/en.png);
+}
+
+header > .left-menu > .widgets > .contact {
+	display: block;
+	width: 300px;
+	height: auto;
+	padding: 10px 0;
+	margin-top: 40px;
+	text-indent: 10px;
+	color: #8e8e8e;
+	font-size: 13px;
+	border-bottom: 1px solid #e0e0e0;
+}
+
+header > .left-menu > .widgets > .contact > p {
+	display: block;
+	height: 30px;
+	line-height: 30px;
+	font-size: 13px;
+}
+
+header > .left-menu > .widgets > .contact > .contact-title {
+	display: block;
+	color: #333;
+	font-size: 15px;
+	font-weight: 500;
+}
+
+header > .left-menu > .widgets > .contact > p > span {
+	display: inline-block;
+	width: 34px;
+	height: 30px;
+	line-height: 30px;
+	margin-right: -1px;
+}
+
+header > .left-menu > .widgets > .contact > img {
+	display: block;
+	width: 100%;
+	height: 100%;
+}
+
+header > .left-menu > .widgets > .family {
+	width: 300px;
+	height: 90px;
+	margin: 15px 0;
+	font-size: 15px;
+}
+header > .left-menu > .widgets > .family > label {
+	display: block;
+	text-indent: 20px;
+}
+header > .left-menu > .widgets > .family > select {
+	display: block;
+	width: 270px;
+	height: 50px;
+	padding: 5px;
+	margin: 15px auto;
+	font-weight: 600;
+	border: 1px solid #e0e0e0;
+	background-color: #eee;
+	-webkit-appearance: none;
+	/*select 내부 스타일 제거 (화살표 제거)*/
+	-moz-appearance: none;
+	-o-appearance: none;
+	appearance: none;
+}
+
+select::-ms-expand {
+	display: none;
+}
+
+/* end of header */
+
+/* section 영역 */
+section {
+	margin-left: 300px;
+	width: 700px;
+}
+section h3 {
+	color: #5e5e5e;
+	font-size: 13px;
+}
+section h4 {
+	color: #bfbfbf;
+	font-size: 11px;
+}
+
+section > .main {
+	display: block;
+	height: 300px;
+	text-indent: -9999px;
+	background-size: cover;
+	background-repeat: no-repeat;
+	background-image: url(./../images/main_image1.jpg);
+}
+
+section > .about-eugene {
+	position: relative;
+	width: 100%;
+	height: 130px;
+	padding: 40px 0;
+	line-height: 2;
+	text-indent: 10px;
+	background-color: rgba(255, 255, 255, 0.95);
+	letter-spacing: -1.3px;
+	background-color: #fff;
+	box-sizing: border-box;
+}
+
+section > .about-eugene > .container {
+	position: absolute;
+	left: 0;
+	top: 50%;
+	display: block;
+	width: 500px;
+	height: 100px;
+	margin-top: -40px;
+	padding-right: 20px;
+	border-right: 1px solid #e0e0e0;
+}
+
+section > .about-eugene > a {
+	position: absolute;
+	right: 20px;
+	top: 50%;
+	display: block;
+	width: 130px;
+	height: 60px;
+	margin-top: -25px;
+	line-height: 1.5;
+	padding: 10px 0;
+	text-indent: 0;
+	text-align: center;
+	color: #fff;
+	background-color: #1a75c0;
+	letter-spacing: 0;
+	box-sizing: border-box;
+	transition: all 3s;
+}
+
+section > .about-eugene > a:hover {
+	color: #1a75c0;
+	background-color: #fff;
+}
+
+section > .business-area-eugene {
+	background-color: #fafafa;
+}
+section > .business-area-eugene > .cont {
+	display: flex;
+	height: 170px;
+	padding: 20px;
+	box-sizing: border-box;
+}
+section > .business-area-eugene > .cont > li {
+	display: block;
+	width: calc(700px / 3);
+	height: 20px;
+	color: #5e5e5e;
+	font-size: 13px;
+	font-weight: 600;
+}
+section > .business-area-eugene > .cont > li > ul {
+	width: calc(100% - 20px);
+	margin: 10px 0;
+	padding: 0 10px 0 0;
+	border-right: 1px solid #e0e0e0;
+	box-sizing: border-box;
+}
+section > .business-area-eugene > .cont > li:last-child > ul {
+	border-right-width: 0;
+}
+section > .business-area-eugene > .cont > li > ul > li {
+	height: 70px;
+	color: #919191;
+	font-size: 11px;
+	font-weight: 400;
+	letter-spacing: 0.5px;
+}
+section > .business-area-eugene > .cont > li > a {
+	display: block;
+	width: 120px;
+	height: 30px;
+	line-height: 30px;
+	line-height: 2;
+	text-align: center;
+	color: #1a75c0;
+	background-color: #fff;
+	background-position: 5px center;
+	background-repeat: no-repeat;
+	background-image: url(./../images/plus_btn.png);
+	transition: all 0.5s;
+}
+
+section > .business-area-eugene > .cont > li > a:hover {
+	background-color: #2a2a2a;
+}
+
+section > .location {
+	position: relative;
+	display: block;
+	height: 200px;
+	background-size: cover;
+	background-repeat: no-repeat;
+	background-image: url(./../images/main_parallax1.jpg);
+}
+section > .location > .location-frame {
+	position: absolute;
+	right: 20px;
+	top: 50%;
+	width: 500px;
+	height: 150px;
+	margin-top: -75px;
+	background-color: rgba(250, 250, 250, 0.9);
+}
+section > .location > .location-frame > span {
+	position: absolute;
+	display: block;
+}
+section > .location > .location-frame > .location-pin {
+	left: 50px;
+	top: 15px;
+	display: block;
+	width: 30px;
+	height: 30px;
+	background-repeat: no-repeat;
+	background-size: contain;
+	background-image: url(./../images/location_pin.png);
+}
+
+section > .location > .location-frame > span.main-text {
+	left: 80px;
+	top: 20px;
+	display: block;
+	width: 120px;
+	color: #1a75c0;
+	font-size: 15px;
+	border-right: 1px solid #e0e0e0;
+	box-sizing: border-box;
+}
+
+section > .location > .location-frame > .location-text {
+	display: block;
+	color: #919191;
+	font-size: 10px;
+}
+section > .location > .location-frame > span.cont-text1 {
+	left: 210px;
+	top: 25px;
+}
+section > .location > .location-frame > span.cont-text2 {
+	left: 50px;
+	top: 60px;
+}
+
+section > .location > .location-frame > .location-search {
+	position: absolute;
+	left: 50px;
+	top: 80px;
+	display: block;
+	width: 130px;
+	height: 40px;
+	line-height: 40px;
+	text-align: center;
+	color: #fff;
+	background-color: #1a75c0;
+	box-sizing: border-box;
+	transition: all 0.5s;
+	cursor: pointer;
+}
+
+section > .location > .location-frame > .location-search:hover {
+	background-color: #2a2a2a;
+}
+
+/* end of section */
+
+footer {
+	position: relative;
+	height: 230px;
+	margin-left: 300px;
+	color: #959595;
+	font-size: 12px;
+	background-color: #2a2a2a;
+	letter-spacing: 0.5px;
+}
+
+footer > .footer-eugene-info {
+	position: absolute;
+	left: 0;
+	top: 0;
+	display: block;
+	width: 233px;
+	height: 150px;
+	padding: 0 10px;
+	margin: 20px 0;
+	border-right: 1px solid #959595;
+	box-sizing: border-box;
+}
+footer > .footer-eugene-info > p.footer-logo {
+	display: block;
+	width: 180px;
+	height: 50px;
+	margin-bottom: 10px;
+	background-position: left center;
+	background-repeat: no-repeat;
+	background-size: contain;
+	background-image: url(./../images/footer_logo.png);
+}
+
+footer > .footer-eugine-info > p.footer-text {
+	display: block;
+}
+
+footer > ul.footer-lnb-legal {
+	position: absolute;
+	left: 230px;
+	top: 0;
+	display: block;
+	width: 233px;
+	height: 150px;
+	padding: 5px 10px;
+	margin: 20px 0;
+	border-right: 1px solid #959595;
+	box-sizing: border-box;
+}
+footer > ul.footer-lnb-legal > li {
+	color: #fff;
+}
+footer > ul.footer-lnb-legal > li > ol {
+	margin-top: 10px;
+}
+footer > ul.footer-lnb-legal > li > ol > li {
+	margin: 20px auto;
+	color: #959595;
+	border: 1px solid #959595;
+	background-repeat: no-repeat;
+	background-size: 20px;
+	background-position: right center;
+	background-image: url(./../images/large_right_trans.png);
+	transition: all 0.5s;
+}
+footer > ul.footer-lnb-legal > li > ol > li:hover {
+	background-color: #1a75c0;
+}
+
+footer > ul.footer-lnb-legal > li > ol > li:hover > a {
+	color: #fff;
+}
+
+footer > ul.footer-lnb-legal > li > ol > li > a {
+	display: block;
+	height: 30px;
+	line-height: 30px;
+	color: #959595;
+}
+
+footer > .footer-lnb-quick {
+	position: absolute;
+	left: 460px;
+	top: 0;
+	display: block;
+	width: 233px;
+	height: 180px;
+	padding: 5px 10px;
+	margin: 20px 0;
+	box-sizing: border-box;
+}
+footer > .footer-lnb-quick > li {
+	color: #fff;
+}
+footer > .footer-lnb-quick > li > ol {
+	margin-top: 10px;
+}
+footer > .footer-lnb-quick > li > ol > li {
+	margin-bottom: 10px;
+	border: 1px solid #959595;
+	background-repeat: no-repeat;
+	background-size: 20px;
+	background-position: right center;
+	background-image: url(./../images/large_right_trans.png);
+	transition: all 0.5s;
+}
+
+footer > .footer-lnb-quick > li > ol > li:hover {
+	background-color: #1a75c0;
+}
+footer > .footer-lnb-quick > li > ol > li:hover > a > span {
+	color: #fff;
+}
+
+footer > .footer-lnb-quick > li > ol > li > a {
+	display: block;
+	height: 30px;
+	line-height: 30px;
+	color: #959595;
+}
+
+footer > address {
+	position: absolute;
+	bottom: 5px;
+	left: 10px;
+	width: 100%;
+	text-align: center;
+	border-top: 1px solid #959595;
+}
+
+@media screen and (max-width: 768px) {
+	#wrap {
+		width: 100%;
+		margin: 0;
+	}
+
+	#bg-img > .bg-frame {
+		display: none;
+	}
+	header {
+		width: 100%;
+		height: 90px;
+		z-index: 1000;
+	}
+
+	header > .logo {
+		width: 100%;
+		height: 90px;
+		background-size: 250px;
+	}
+	header > a.btn-gnb {
+		display: block;
+		position: absolute;
+		left: 10px;
+		top: 30px;
+		width: 30px;
+		height: 30px;
+		text-indent: -9999px;
+		background-position: center center;
+		background-size: contain;
+		background-image: url(./../images/btn_gnb1.png);
+	}
+	header > .left-menu {
+		display: none;
+	}
+
+	header > .left-menu > nav,
+	header > .left-menu > .widgets {
+		position: absolute;
+		left: 0;
+		background-color: rgba(255, 255, 255, 0.95);
+	}
+	header > .left-menu > nav {
+		top: 90px;
+		width: 200px;
+	}
+
+	header > .left-menu > nav > .gnb > li > .lnb {
+		width: 200px;
+		left: 200px;
+	}
+
+	header > .left-menu > .widgets {
+		top: 359px;
+		width: 200px;
+	}
+
+	header > .left-menu > .widgets > .widget-tool > li > .search {
+		width: 200px;
+	}
+	header > .left-menu > .widgets > .widget-tool > li.on > .search {
+		background-position: 160px center;
+	}
+
+	header > .left-menu > .widgets > .widget-tool > li > .main-language {
+		width: 150px;
+		background-position: 0 50%;
+	}
+	header > .left-menu > .widgets > .contact {
+		width: 200px;
+		padding: 0;
+		text-indent: 5px;
+		font-size: 10px;
+		letter-spacing: -0.5px;
+	}
+	header > .left-menu > .widgets > .contact > .contact-title {
+		font-size: 12px;
+	}
+	header > .left-menu > .widgets > .contact > p {
+		font-size: 10px;
+		text-indent: -1px;
+	}
+	header > .left-menu > .widgets > .contact > p > span {
+		display: inline-block;
+		width: 17px;
+		height: 15px;
+		line-height: 20px;
+	}
+	header > .left-menu > .widgets > .family {
+		width: 200px;
+		height: 50px;
+		font-size: 12px;
+	}
+
+	header > .left-menu > .widgets > .family > select {
+		width: 170px;
+		height: 30px;
+		font-size: 10px;
+	}
+
+	section,
+	footer {
+		width: 100%;
+		margin-left: 0;
+	}
+
+	section > .main {
+		width: 760px;
+		height: 400px;
+		background-size: cover;
+	}
+}
+
+@media screen and (max-width: 640px) {
+	header > .logo {
+		height: 70px;
+		background-size: 190px;
+	}
+	section > .main {
+		width: 100%;
+		height: 300px;
+		background-size: 680px;
+	}
+	section > .about-eugene {
+		height: 200px;
+		text-indent: 0;
+		text-align: center;
+		letter-spacing: -2px;
+	}
+	section > .about-eugene > .container {
+		border-right: none;
+	}
+	section > .about-eugene > a {
+		right: 50%;
+		margin-top: 0;
+		margin-right: -65px;
+	}
+
+	section > .business-area-eugene > .cont {
+		display: block;
+		height: 380px;
+		padding: 10px;
+	}
+	section > .business-area-eugene > .cont > li {
+		width: 100%;
+		height: 120px;
+	}
+
+	section > .business-area-eugene > .cont > li > ul {
+		border-right: none;
+		padding: 0;
+	}
+
+	section > .business-area-eugene > .cont > li > ul > li {
+		height: 30px;
+	}
+	section > .location {
+		height: 300px;
+	}
+	section > .location > .location-frame {
+		right: 50%;
+		margin-right: -250px;
+	}
+	footer {
+		height: 500px;
+	}
+	footer > .footer-eugene-info {
+		width: 100%;
+		height: 110px;
+		border-right: none;
+	}
+	footer > .footer-eugene-info > p.footer-logo {
+		width: 100%;
+		margin-bottom: 10px;
+		background-size: 180px;
+	}
+	footer > ul.footer-lnb-legal {
+		left: 0;
+		top: 110px;
+		width: 100%;
+		border-right: none;
+	}
+
+	footer > .footer-lnb-quick {
+		left: 0;
+		top: 260px;
+		width: 100%;
+	}
+
+	footer > address {
+		text-align-last: left;
+	}
+}
